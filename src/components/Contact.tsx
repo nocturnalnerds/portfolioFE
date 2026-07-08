@@ -5,24 +5,61 @@ import '../styles/Contact.css';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
+type FormErrors = {
+  name?: string;
+  email?: string;
+  message?: string;
+};
+
+function validate(form: { name: string; email: string; message: string }): FormErrors {
+  const errors: FormErrors = {};
+  if (!form.name.trim()) errors.name = 'Name is required.';
+  if (!form.email.trim()) {
+    errors.email = 'Email is required.';
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    errors.email = 'Enter a valid email address.';
+  }
+  if (!form.message.trim()) errors.message = 'Message is required.';
+  else if (form.message.trim().length < 10) errors.message = 'Message must be at least 10 characters.';
+  return errors;
+}
+
 export default function Contact() {
   const { ref, inView } = useInView();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<Status>('idle');
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const updated = { ...form, [e.target.name]: e.target.value };
+    setForm(updated);
+    if (touched[e.target.name]) {
+      setErrors(validate(updated));
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setTouched((prev) => ({ ...prev, [e.target.name]: true }));
+    setErrors(validate(form));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const validationErrors = validate(form);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      setTouched({ name: true, email: true, message: true });
+      return;
+    }
+
     setStatus("loading");
 
     try {
-        const res = await fetch("https://portfoliowebsitebe-production.up.railway.app/api/contact", {
+        const res = await fetch(`${import.meta.env.VITE_CONTACT_LINK}/api/contact`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -33,11 +70,9 @@ export default function Contact() {
         if (!res.ok) throw new Error();
 
         setStatus("success");
-        setForm({
-            name: "",
-            email: "",
-            message: "",
-        });
+        setForm({ name: "", email: "", message: "" });
+        setErrors({});
+        setTouched({});
     } catch {
         setStatus("error");
     }
@@ -134,13 +169,16 @@ export default function Contact() {
               id="name"
               name="name"
               type="text"
-              className="contact__input"
+              className={`contact__input${errors.name && touched.name ? ' contact__input--error' : ''}`}
               placeholder="Your name"
               value={form.name}
               onChange={handleChange}
-              required
+              onBlur={handleBlur}
               autoComplete="name"
             />
+            {errors.name && touched.name && (
+              <span className="contact__error">{errors.name}</span>
+            )}
           </div>
 
           <div className="contact__field">
@@ -149,13 +187,16 @@ export default function Contact() {
               id="email"
               name="email"
               type="email"
-              className="contact__input"
+              className={`contact__input${errors.email && touched.email ? ' contact__input--error' : ''}`}
               placeholder="your@email.com"
               value={form.email}
               onChange={handleChange}
-              required
+              onBlur={handleBlur}
               autoComplete="email"
             />
+            {errors.email && touched.email && (
+              <span className="contact__error">{errors.email}</span>
+            )}
           </div>
 
           <div className="contact__field">
@@ -163,13 +204,16 @@ export default function Contact() {
             <textarea
               id="message"
               name="message"
-              className="contact__textarea"
+              className={`contact__textarea${errors.message && touched.message ? ' contact__input--error' : ''}`}
               placeholder="Tell me about your project..."
               value={form.message}
               onChange={handleChange}
-              required
+              onBlur={handleBlur}
               rows={5}
             />
+            {errors.message && touched.message && (
+              <span className="contact__error">{errors.message}</span>
+            )}
           </div>
 
           <button
