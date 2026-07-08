@@ -73,7 +73,7 @@ export default function Projects() {
 
   return (
     <section className="projects" id="projects">
-      <div className="projects__header" ref={ref as React.RefObject<HTMLElement>}>
+      <div className="projects__header" ref={ref as React.RefObject<HTMLDivElement>}>
         <div className="projects__header-inner">
           <div className={`reveal${inView ? ' visible' : ''}`}>
             <p className="section-label">Projects</p>
