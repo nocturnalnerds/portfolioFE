@@ -1,0 +1,139 @@
+.experience {
+  padding: var(--section-padding);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.experience__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.experience__header {
+  margin-bottom: 4.5rem;
+}
+
+.experience__timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience__item {
+  display: grid;
+  grid-template-columns: 180px 40px 1fr;
+  gap: 0;
+  position: relative;
+}
+
+.experience__left {
+  padding-top: 0.1rem;
+  padding-right: 2rem;
+  text-align: right;
+}
+
+.experience__date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.experience__dot-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.experience__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+
+.experience__line {
+  flex: 1;
+  width: 1px;
+  background: var(--color-border);
+  margin-top: 4px;
+  min-height: 40px;
+}
+
+.experience__right {
+  padding-left: 2rem;
+  padding-bottom: 3.5rem;
+}
+
+.experience__item:last-child .experience__right {
+  padding-bottom: 0;
+}
+
+.experience__date-mobile {
+  display: none;
+}
+
+.experience__role {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.2rem;
+}
+
+.experience__company {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 0.85rem;
+}
+
+.experience__desc {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.experience__desc li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.experience__desc li::before {
+  content: '–';
+  color: var(--color-accent);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .experience__item {
+    grid-template-columns: 28px 1fr;
+    gap: 0;
+  }
+
+  .experience__left {
+    display: none;
+  }
+
+  .experience__date-mobile {
+    display: block;
+  }
+
+  .experience__right {
+    padding-left: 1.25rem;
+  }
+}
