@@ -69,7 +69,7 @@
   font-size: clamp(6rem, 12vw, 11rem);
   font-weight: 900;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba(62, 62, 62, 0.168);
   pointer-events: none;
   letter-spacing: -0.05em;
   user-select: none;
