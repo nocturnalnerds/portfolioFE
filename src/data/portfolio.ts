@@ -155,7 +155,7 @@ export const projects: Project[] = [
     tech: ["Shell", "Yaml", "Strimzi.io", "Docker", "Kubernetes", "Kafka"],
     github: "https://github.com/nocturnalnerds/project-gamma",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    imageSrc: "/porto3.png",
+    imageSrc: "./porto3.png",
   },
   {
     id: 4,
