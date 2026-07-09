@@ -29,6 +29,7 @@ function ProjectRow({
               ? `url(${project.imageSrc})`
               : project.gradient,
           }}
+          onContextMenu={(e) => e.preventDefault()}
         />
         {/* <span className="project-row__num">{num}</span> */}
         <div className="project-row__hover-overlay">

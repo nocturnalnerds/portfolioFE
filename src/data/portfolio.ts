@@ -34,7 +34,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/williamssandjaya",
   github: "https://github.com/nocturnalnerds",
   leetcode: "https://leetcode.com/u/noturnalneerds/",
-  cvUrl: "/CV_WilliamsSandjaya.pdf",
+  cvUrl: "/WilliamsSandjaya_Resume_2026.pdf",
   location: "Jakarta, Indonesia",
 };
 
