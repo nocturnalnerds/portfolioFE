@@ -61,7 +61,20 @@ export default function Hero() {
             </a>
 
             <a
-              href={`mailto:${personalInfo.email}`}
+              href={personalInfo.leetcode}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero__icon-btn"
+              aria-label="LeetCode"
+            >
+              <img src="/leetcode.png" width="18" height="18" alt="LeetCode" />
+              LeetCode
+            </a>
+
+            <a
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hero__icon-btn"
               aria-label="Email"
             >

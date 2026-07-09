@@ -23,7 +23,7 @@ export default function Footer() {
               {personalInfo.initials}
             </a>
             <p className="footer__tagline">
-              Building things for the web.
+              Building things for fun.
             </p>
           </div>
 
@@ -58,7 +58,7 @@ export default function Footer() {
             © {currentYear} {personalInfo.name}. All rights reserved.
           </p>
           <p className="footer__built">
-            Built with React & TypeScript
+            Built with React, TypeScript & Tailwind CSS.
           </p>
         </div>
       </div>

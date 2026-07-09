@@ -116,7 +116,7 @@ export default function Contact() {
           </p>
 
           <div className="contact__links">
-            <a href={`mailto:${personalInfo.email}`} className="contact__link">
+            <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}`} className="contact__link">
               <div className="contact__link-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -170,7 +170,7 @@ export default function Contact() {
               name="name"
               type="text"
               className={`contact__input${errors.name && touched.name ? ' contact__input--error' : ''}`}
-              placeholder="Your name"
+              placeholder="Williams Sandjaya"
               value={form.name}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -188,7 +188,7 @@ export default function Contact() {
               name="email"
               type="email"
               className={`contact__input${errors.email && touched.email ? ' contact__input--error' : ''}`}
-              placeholder="your@email.com"
+              placeholder="sandjayawilliams16072005@gmail.com"
               value={form.email}
               onChange={handleChange}
               onBlur={handleBlur}

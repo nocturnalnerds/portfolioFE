@@ -28,11 +28,12 @@ export const personalInfo = {
   title: "Software Engineer",
   tagline:
     "今度は今度、今は今 - Perfect Days.\nSoftware Engineer | Full Stack Developer\nCurrently Learning Systems Programming",
-  about: `I'm a software engineer driven by the challenge of turning complex problems into elegant, user-friendly solutions.  I specialize in Event-Driven Architecture (EDA) to optimize performance, manage complex data flows, and build systems that scale effortlessly. I approach every architectural challenge with meticulous attention to detail. 
-  Off the clock:  tech enthusiast, and always brainstorming my next technical challenge.`,
+  about: `I'm a software engineer driven by the challenge of turning complex problems into elegant, user-friendly solutions.  I specialize in Event-Driven Architecture (EDA) thus optimizing performance, managing complex data flows, and ensuring systems scalability. 
+  I approach every architectural challenge with meticulous attention to detail. \n\nOff the clock:  tech nerd, love to read tech blogs/articles, and always finding time to sleep.`,
   email: "sandjayawilliams16072005@gmail.com",
   linkedin: "https://linkedin.com/in/williamssandjaya",
   github: "https://github.com/nocturnalnerds",
+  leetcode: "https://leetcode.com/u/noturnalneerds/",
   cvUrl: "/CV_WilliamsSandjaya.pdf",
   location: "Jakarta, Indonesia",
 };
@@ -148,6 +149,28 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    title: "Splitto",
+    category: "Mobile Split Bill OCR App",
+    description:
+      "Splitto is a mobile application that uses OCR technology to simplify bill splitting among friends. Users can quickly scan receipts, and the app automatically calculates each person's share, making group payments hassle-free.",
+    tech: ["React PWA", "TypeScript", "PostgreSQL", "Node.js", "OpenAI"],
+    github: "https://github.com/nocturnalnerds/SplittoCopy",
+    gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+    imageSrc: "./porto5.png",
+  },
+  {
+    id: 4,
+    title: "Vault Chat - Golang gRPC",
+    category: "CLI Apps + Backend Service",
+    description:
+      "Vault Chat is a command-line interface (CLI) application built with Golang and gRPC for secure, real-time messaging. The application employs end-to-end encryption to protect communications while leveraging Go's concurrency primitives-including goroutines, channels, mutexes, and synchronization mechanisms thus efficiently handle multiple simultaneous client connections, asynchronous message delivery, and concurrent server operations.",
+    tech: ["Golang", "gRPC", "CLI", "Docker", "TLS Encryption"],
+    github: "https://github.com/nocturnalnerds/GoLangRPCCLIChatRoom.git",
+    gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+    imageSrc: "./porto4.png",
+  },
+  {
+    id: 5,
     title: "Kafka Zookeper to Kraft Migration Pipeline",
     category: "Backend Migration Service",
     description:
@@ -156,25 +179,5 @@ export const projects: Project[] = [
     github: "https://github.com/nocturnalnerds/project-gamma",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     imageSrc: "./porto3.png",
-  },
-  {
-    id: 4,
-    title: "Project Delta",
-    category: "Data Dashboard",
-    description:
-      "Interactive analytics dashboard with customizable widgets, real-time data streaming, and exportable reporting features.",
-    tech: ["Next.js", "D3.js", "TypeScript", "MongoDB"],
-    github: "https://github.com/yourusername/project-delta",
-    gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-  },
-  {
-    id: 5,
-    title: "Project Epsilon",
-    category: "CLI Tool",
-    description:
-      "Developer productivity CLI tool that automates repetitive workflows, reducing boilerplate setup time from hours to seconds.",
-    tech: ["Node.js", "TypeScript", "Ink", "npm"],
-    github: "https://github.com/yourusername/project-epsilon",
-    gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
   },
 ];
