@@ -11,7 +11,6 @@ function ProjectRow({
 }) {
   const { ref, inView } = useInView(0.05);
   const isReverse = index % 2 !== 0;
-  const num = String(index + 1).padStart(2, '0');
 
   return (
     <a
