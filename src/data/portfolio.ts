@@ -163,7 +163,7 @@ export const projects: Project[] = [
     title: "Vault Chat - Golang gRPC",
     category: "CLI Apps + Backend Service",
     description:
-      "Vault Chat is a command-line interface (CLI) application built with Golang and gRPC for secure, real-time messaging. The application employs end-to-end encryption to protect communications while leveraging Go's concurrency primitives-including goroutines, channels, mutexes, and synchronization mechanisms thus efficiently handle multiple simultaneous client connections, asynchronous message delivery, and concurrent server operations.",
+      "Vault Chat is a CLI application built with Go over gRPC protocol providing real-time messaging. The application employs end-to-end encryption to protect communications while also leveraging Go's concurrency such as goroutines, channels and mutexes to efficiently handle multiple simultaneous client connections and concurrent server operations.",
     tech: ["Golang", "gRPC", "CLI", "Docker", "TLS Encryption"],
     github: "https://github.com/nocturnalnerds/GoLangRPCCLIChatRoom.git",
     gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
@@ -176,7 +176,7 @@ export const projects: Project[] = [
     description:
       "Developed a migration pipeline to transition from Apache Kafka with Zookeeper to KRaft mode, ensuring minimal downtime and data integrity. The service handles message replication, topic configuration, and consumer group management during the migration process.",
     tech: ["Shell", "Yaml", "Strimzi.io", "Docker", "Kubernetes", "Kafka"],
-    github: "https://github.com/nocturnalnerds/project-gamma",
+    github: "https://github.com/nocturnalnerds/Internal_Kafka_Migration_ZKP_to_KRaft",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     imageSrc: "./porto3.png",
   },
